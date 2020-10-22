@@ -1,18 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Rental
+  name: rental
   labels:
-    app: Rental
+    app: rental
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Rental
+      app: rental
   template:
     metadata:
       labels:
-        app: Rental
+        app: rental
+      annotations:
+        sidecar.istio.io/inject: "true"  
     spec:
       hosts:
       - rental
@@ -21,7 +23,7 @@ spec:
         - destination:
             host: rental
       containers:
-        - name: Rental
+        - name: rental
           image: 467263215646.dkr.ecr.ap-northeast-1.amazonaws.com/skccuser17-myproduct:v1
           #username/Rental:latest
           ports:
