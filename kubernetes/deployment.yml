@@ -22,7 +22,7 @@ spec:
             host: rental
       containers:
         - name: Rental
-          image: 496278789073.dkr.ecr.ap-northeast-1.amazonaws.com/skccuser02-rental
+          image: 467263215646.dkr.ecr.ap-northeast-1.amazonaws.com/skccuser17-myproduct:v1
           #username/Rental:latest
           ports:
             - containerPort: 8080
